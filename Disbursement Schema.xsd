@@ -1,0 +1,66 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="disbursements">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="entry" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="primaryPayer">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="first" use="required"/>
+							<xs:attribute type="xs:string" name="middle" use="optional"/>
+                            <xs:attribute type="xs:string" name="last" use="required"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="id" />
+                  <xs:attribute type="xs:string" name="domain" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="authorizedPayer" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="last" use="required"/>
+							<xs:attribute type="xs:string" name="middle" use="optional"/>
+                            <xs:attribute type="xs:string" name="first" use="required"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="id" use="optional"/>
+                  <xs:attribute type="xs:string" name="domain" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="address">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="addressLine1"/>
+                    <xs:element type="xs:string" name="city"/>
+                    <xs:element type="xs:string" name="state"/>
+                    <xs:element type="xs:int" name="zip"/>
+                    <xs:element type="xs:string" name="country"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="email"/>
+            </xs:sequence>
+            <xs:attribute type="xs:float" name="amount" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="department"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
