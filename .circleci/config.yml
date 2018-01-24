@@ -9,3 +9,6 @@ jobs:
     filters:
       branches:
         only: master
+    steps:
+      name: s1
+      run: pwd
