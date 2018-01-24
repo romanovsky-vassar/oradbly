@@ -15,4 +15,5 @@ jobs:
           command: pwd
       - run:
           name: s2
-          command: console.log(${CIRCLE_BRANCH})
+          command: |
+          echo $CIRCLE_BRANCH
