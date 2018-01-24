@@ -10,5 +10,9 @@ jobs:
       branches:
         only: master
     steps:
-      name: s1
-      run: pwd
+      - run:
+        name: s1
+        command: pwd
+      - run:
+        name: s2
+        command: pwd
