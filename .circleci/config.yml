@@ -9,7 +9,7 @@ jobs:
     filters:
       branches:
         only: master
-    step:
+    steps:
       - run:
           name: s1
           command: pwd
