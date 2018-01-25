@@ -14,7 +14,7 @@ jobs:
       
       - run:
           name: s1
-          command: pwd
+          command: ls -l
       - run:
           name: s2
           command: echo ${REPO_NAME}
