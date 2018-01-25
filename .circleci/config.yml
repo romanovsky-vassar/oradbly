@@ -16,4 +16,4 @@ jobs:
       - run:
           name: s2
           command: |
-          echo $CIRCLE_BRANCH
+          echo ${REPO_NAME}
