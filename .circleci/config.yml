@@ -13,7 +13,7 @@ jobs:
       - checkout
       
       - run:
-          name: rad file
+          name: read file
           command: |
           foo="`cat README.md`"
           echo $foo
