@@ -15,8 +15,8 @@ jobs:
       - run:
           name: read file
           command: |
-          foo="`cat README.md`"
-          echo $foo
+            foo="`cat README.md`"
+            echo $foo
           
       - run:
           name: s2
