@@ -10,6 +10,8 @@ jobs:
       branches:
         only: master
     steps:
+      - checkout
+      
       - run:
           name: s1
           command: pwd
