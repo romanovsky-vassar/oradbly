@@ -13,8 +13,11 @@ jobs:
       - checkout
       
       - run:
-          name: s1
-          command: ls -l
+          name: rad file
+          command: |
+          foo="`cat README.md`"
+          echo $foo
+          
       - run:
           name: s2
           command: echo ${REPO_NAME}
