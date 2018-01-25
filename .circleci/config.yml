@@ -15,5 +15,4 @@ jobs:
           command: pwd
       - run:
           name: s2
-          command: |
-          echo ${REPO_NAME}
+          command: echo ${REPO_NAME}
