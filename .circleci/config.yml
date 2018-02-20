@@ -11,13 +11,13 @@ jobs:
         only: master
     steps:
       - checkout
-      
+
       - run:
           name: read file
           command: |
             foo="`cat README.md`"
             echo $foo
-          
+
       - run:
-          name: s2
-          command: echo ${REPO_NAME}
+          name:
+          command: echo ${REPO_NAME} # config'd circleci project 
