@@ -1,6 +1,7 @@
 # CircleCI 2.0 configuration file
 #
-#
+# config ENVVAR inside circleci project
+
 version: 2
 jobs:
   build:
@@ -13,11 +14,14 @@ jobs:
       - checkout
 
       - run:
-          name: read file
-          command: |
-            foo="`cat README.md`"
-            echo $foo
-
+          name: clone target
+          command: git clone https://github.com/romanovsky-vassar/target-ci.git
       - run:
-          name: s2
-          command: echo ${REPO_NAME} # config'd circleci project
+          name: copy latest
+          command: cp README.md ./target-ci/docs/index.md
+      - run:
+          name: s3
+          command: cd target-ci
+      - run:
+          name: s4
+          command: ls -l
