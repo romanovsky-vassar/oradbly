@@ -19,5 +19,5 @@ jobs:
             echo $foo
 
       - run:
-          name:
-          command: echo ${REPO_NAME} # config'd circleci project 
+          name: s2
+          command: echo ${REPO_NAME} # config'd circleci project
