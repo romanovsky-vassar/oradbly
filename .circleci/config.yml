@@ -21,7 +21,6 @@ jobs:
           command: cp README.md ./target-ci/docs/index.md
       - run:
           name: s3
-          command: cd target-ci
-      - run:
-          name: s4
-          command: ls -l
+          command: |
+            cd target-ci
+            ls -l
