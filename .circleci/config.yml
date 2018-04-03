@@ -23,6 +23,8 @@ jobs:
           name: check-in .MD
           command: |
             cd target-ci
+            git config user.email "romanovsky@vassar.edu"
+            git config user.name "Vassar College"
             git add .
             git commit -m "page update"
             git push origin master
