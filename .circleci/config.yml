@@ -13,6 +13,10 @@ jobs:
     steps:
       - checkout
 
+      - add_ssh_keys:
+          fingerprints:
+            - "40:5f:47:ef:65:95:40:69:86:77:55:24:16:0a:f1:8b"
+            
       - run:
           name: clone target
           command: git clone https://github.com/romanovsky-vassar/target-ci.git
