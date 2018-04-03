@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:latest # custom image in public Docker registry
     filters:
       branches:
         only: master
@@ -20,7 +20,9 @@ jobs:
           name: copy latest
           command: cp README.md ./target-ci/docs/index.md
       - run:
-          name: s3
+          name: check-in .MD
           command: |
             cd target-ci
-            ls -l
+            git add .
+            git commit -m "page update"
+            git push origin master
