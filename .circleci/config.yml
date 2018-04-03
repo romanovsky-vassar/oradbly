@@ -27,4 +27,4 @@ jobs:
             git config user.name "Vassar College"
             git add .
             git commit -m "page update"
-            git push origin master
+            git remote -v
