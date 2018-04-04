@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: markromanovsky/cloud-sdk-circleci:latest # custom image in public Docker registry
+      - image: markromanovsky/gcloud-sdk-circleci:latest # custom image in public Docker registry
     filters:
       branches:
         only: master
