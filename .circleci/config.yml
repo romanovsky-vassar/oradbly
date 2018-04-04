@@ -17,6 +17,18 @@ jobs:
           fingerprints:
             - "40:5f:47:ef:65:95:40:69:86:77:55:24:16:0a:f1:8b"
 
+      - run: git clone https://github.com/romanovsky-vassar/target-ci.git
+      - run: cp README.md ./target-ci/docs/index.md
+      - run:
+          name: check-in .MD
+          command: |
+            cd target-ci
+            git config user.email "romanovsky@vassar.edu"
+            git config user.name "Vassar College"
+            git add .
+            git commit -m "page update"
+            git push origin master
+
       - run:
           name: gcloud auth
           command: gcloud auth activate-service-account --key-file /tmp/gcloud-service-account.json
