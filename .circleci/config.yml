@@ -35,4 +35,4 @@ jobs:
 
       - run:
           name: gcloud pubsub
-          command: gcloud pubsub topics publish topic-1-Winter-2018	--message 'romanovsky'
+          command: gcloud pubsub topics publish topic-1-Winter-2018	--message '{"name" : "Taylor", "city" : "Lagrangeville"}'
