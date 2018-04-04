@@ -34,5 +34,5 @@ jobs:
           command: gcloud auth activate-service-account --key-file /tmp/gcloud-service-account.json
 
       - run:
-          name: gcloud auth confirm
-          command: gcloud auth list
+          name: gcloud pubsub
+          command: gcloud pubsub topics publish topic-1-Winter-2018	--message '{"intsys":"Add Workday Account", "version":"v1.0.3"}'
