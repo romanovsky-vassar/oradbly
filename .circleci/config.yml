@@ -31,7 +31,7 @@ jobs:
 
       - run:
           name: gcloud auth
-          command: gcloud auth activate-service-account --key-file /tmp/gcloud-service-account.json
+          command: gcloud auth activate-service-account --key-file /tmp/gcloud-service-account.json --project cloud-storage-to-datastore
 
       - run:
           name: gcloud pubsub
