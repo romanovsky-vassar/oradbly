@@ -20,3 +20,7 @@ jobs:
       - run:
           name: gcloud auth
           command: gcloud auth activate-service-account --key-file /tmp/gcloud-service-account.json
+
+      - run:
+          name: gcloud auth confirm
+          command: gcloud auth list
