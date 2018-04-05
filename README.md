@@ -14,7 +14,7 @@
     - task= scheduled pipeline running hourly
     - v1.0.0
 
-- Google-AD.Password [] []
+- Google-AD.Password [] [] []
     - Captures Google Worksheet data (802.1x keyboardless devices) and uses AD Update Entry snap to update password for each CN
     - output= no output, change to AD
     - task= NA (child pipeline of Google.AD)
