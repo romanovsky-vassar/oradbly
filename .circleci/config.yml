@@ -21,9 +21,12 @@ jobs:
 
       - run:
           name: set commit description
-          command: echo 'export GIT_COMMIT_DESC=$(git log --format=oneline --abbrev-commit -n 1 $CIRCLE_SHA1)' >> ~/.bashrc
+          command: |
+            echo 'export GIT_COMMIT_DESC=$(git log --format=oneline --abbrev-commit -n 1 $CIRCLE_SHA1)' >> ~/.bashrc
+            echo 'export GIT_COMMIT_FILE=$(git diff-tree --no-commit-id --name-only -r 827e98a)' >> ~/.bashrc
 
       - run: echo $GIT_COMMIT_DESC
+      - run: echo $GIT_COMMIT_FILE
 
       - run: git clone https://github.com/romanovsky-vassar/target-ci.git
       - run: cp README.md ./target-ci/docs/index.md
