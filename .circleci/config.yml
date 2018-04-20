@@ -21,10 +21,9 @@ jobs:
 
       - run:
           name: env
-          commands:
-            - echo $GIT_COMMIT_DESC
-              environment:
-                GIT_COMMIT_DESC: $(git log --format=oneline -n 1 $CIRCLE_SHA1)
+          command: echo $GIT_COMMIT_DESC
+          environment:
+            GIT_COMMIT_DESC: $(git log --format=oneline -n 1 $CIRCLE_SHA1)
 
       - run: echo $GIT_COMMIT_DESC
 
