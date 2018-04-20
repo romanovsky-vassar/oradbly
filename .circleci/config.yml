@@ -10,7 +10,7 @@ jobs:
     branches:
       only: master
     environment:
-      - GIT_COMMIT_DESC: (git log --format=oneline -n 1 $CIRCLE_SHA1)
+      - GIT_COMMIT_TEMP: "Hello World"
 
     steps:
       - checkout
@@ -18,6 +18,12 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "40:5f:47:ef:65:95:40:69:86:77:55:24:16:0a:f1:8b"
+
+      - run:
+          name: env
+          command: echo $GIT_COMMIT_DESC
+          environment:
+            GIT_COMMIT_DESC: $(git log --format=oneline -n 1 $CIRCLE_SHA1)
 
       - run: echo $GIT_COMMIT_DESC
 
