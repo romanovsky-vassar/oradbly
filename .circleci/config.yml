@@ -8,7 +8,7 @@ jobs:
     docker:
       - image: markromanovsky/gcloud-sdk-circleci:latest # custom image in public Docker registry
     environment:
-      - GIT_COMMIT_DESC: $(git log --format=oneline -n 1 $CIRCLE_SHA1)
+      GIT_COMMIT_DESC: $(git log --format=oneline -n 1 $CIRCLE_SHA1)
     filters:
       branches:
         only: master
