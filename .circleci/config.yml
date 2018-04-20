@@ -8,7 +8,8 @@ jobs:
     docker:
       - image: markromanovsky/gcloud-sdk-circleci:latest # custom image in public Docker registry
         enviroment:
-          GIT_COMMIT_DESC: $(git log --format=oneline -n 1 $CIRCLE_SHA1)
+          #GIT_COMMIT_DESC: $(git log --format=oneline -n 1 $CIRCLE_SHA1)
+          GIT_COMMIT_DESC: "Hello World"
     branches:
       only: master
 
@@ -19,7 +20,7 @@ jobs:
           fingerprints:
             - "40:5f:47:ef:65:95:40:69:86:77:55:24:16:0a:f1:8b"
 
-      - run: print $GIT_COMMIT_DESC
+      - run: echo $GIT_COMMIT_DESC
 
       - run: git clone https://github.com/romanovsky-vassar/target-ci.git
       - run: cp README.md ./target-ci/docs/index.md
