@@ -29,6 +29,8 @@ jobs:
             git commit -m "page update"
             git push origin master
 
+      - run: pip install --upgrade google-cloud-pubsub
+      
       - run:
           name: gcloud auth
           command: gcloud auth activate-service-account --key-file /tmp/gcloud-service-account.json --project cloud-storage-to-datastore
