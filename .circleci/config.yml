@@ -19,7 +19,7 @@ jobs:
 
       - run:
           environment:
-            GIT_COMMIT_DESC: (git log --format=oneline -n 1 $CIRCLE_SHA1)
+            GIT_COMMIT_DESC: $(git log --format=oneline -n 1 $CIRCLE_SHA1)
           command:
             print $GIT_COMMIT_DESC
 
