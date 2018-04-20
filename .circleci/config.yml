@@ -10,7 +10,7 @@ jobs:
     branches:
       only: master
     environment:
-      - GIT_COMMIT_TEMP: "Hello World"
+      - BASH_ENV: ~/.bashrc
 
     steps:
       - checkout
@@ -21,9 +21,7 @@ jobs:
 
       - run:
           name: env
-          command: echo $GIT_COMMIT_DESC
-          environment:
-            GIT_COMMIT_DESC: $(git log --format=oneline -n 1 $CIRCLE_SHA1)
+          command: echo 'export GIT_COMMIT_DESC=$(git log --format=oneline -n 1 $CIRCLE_SHA1)' >> ~/.bashrc
 
       - run: echo $GIT_COMMIT_DESC
 
