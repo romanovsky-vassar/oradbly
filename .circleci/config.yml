@@ -10,7 +10,7 @@ jobs:
     branches:
       only: master
     environment:
-      - GIT_COMMIT_DESC: "Hello World"
+      - GIT_COMMIT_DESC: $(git log --format=oneline -n 1 $CIRCLE_SHA1)
 
     steps:
       - checkout
