@@ -9,7 +9,7 @@ jobs:
       - image: markromanovsky/gcloud-sdk-circleci:latest # custom image in public Docker registry
     branches:
       only: master
-    enviroment:
+    environment:
       - GIT_COMMIT_DESC: "Hello World"
 
     steps:
